@@ -4,9 +4,9 @@ A small, native Mac desktop widget showing disk usage, free space, and the large
 
 It uses WidgetKit, so placement, dragging, desktop reveal, and appearance work like Weather and other macOS widgets. The companion app can be closed after setup.
 
-<img src="docs/images/desktop-widget.png" width="280" alt="Disk Peek on the desktop, showing percent used, free space, and a largest-file row" />
+<img src="docs/images/desktop-widget.png" width="640" alt="Disk Peek beside Weather on the macOS desktop, showing disk usage, free space, and a largest-file row" />
 
-Actual desktop screenshot. The filename is redacted; macOS is showing its inactive-desktop appearance.
+Actual desktop screenshot with Disk Peek beside Weather in full color.
 
 ## Setup
 

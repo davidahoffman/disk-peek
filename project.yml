@@ -1,0 +1,51 @@
+name: DiskPeek
+options:
+  deploymentTarget:
+    macOS: "14.0"
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    CODE_SIGN_STYLE: Manual
+    CODE_SIGN_IDENTITY: "-"
+    ARCHS: arm64
+    CURRENT_PROJECT_VERSION: 3
+    MARKETING_VERSION: "2.1"
+targets:
+  DiskPeek:
+    type: application
+    platform: macOS
+    sources:
+      - DiskPeek.swift
+      - Storage.swift
+      - StorageSummary.swift
+      - SharedFiles.swift
+      - LargestFileScanner.swift
+    settings:
+      base:
+        PRODUCT_NAME: Disk Peek
+        EXECUTABLE_NAME: DiskPeek
+        PRODUCT_BUNDLE_IDENTIFIER: local.david.disk-peek
+        INFOPLIST_FILE: Info.plist
+        COMBINE_HIDPI_IMAGES: YES
+    dependencies:
+      - target: DiskPeekWidget
+  DiskPeekWidget:
+    type: app-extension
+    platform: macOS
+    sources:
+      - DiskPeekWidget.swift
+      - Storage.swift
+      - StorageSummary.swift
+      - SharedFiles.swift
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: local.david.disk-peek.widget
+        INFOPLIST_FILE: Widget-Info.plist
+        CODE_SIGN_ENTITLEMENTS: Widget.entitlements
+        ENABLE_APP_SANDBOX: YES
+        SKIP_INSTALL: YES
+schemes:
+  DiskPeek:
+    build:
+      targets:
+        DiskPeek: all

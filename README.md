@@ -20,7 +20,7 @@ Requirements:
 Build from source and install:
 
 ```bash
-git clone https://github.com/shopify-playground/disk-peek.git
+git clone https://github.com/davidahoffman/disk-peek.git
 cd disk-peek
 bash install.sh
 ```
